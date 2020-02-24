@@ -104,6 +104,16 @@ class DoublyLinkedList:
     """Removes a node from the list and handles cases where
     the node was the head or the tail"""
     def delete(self, node):
+        self.length -= 1                                           # keep track of length 
+        if not self.head and not self.tail:                        # if LL is empty 
+            print("Error there is nothing to delete") 
+            return
+        elif self.head:                                            # if its the head
+            #keep track of the new head
+            # change pointers 
+        # if its the tail 
+        # if its both 
+        # if its in the middle 
         pass
         
     """Returns the highest value currently in the list"""
