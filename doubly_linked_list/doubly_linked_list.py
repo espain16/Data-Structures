@@ -67,9 +67,20 @@ class DoublyLinkedList:
     current head's next node the new head of the List.
     Returns the value of the removed Node."""
     def remove_from_head(self):
-        value = self.head.value                                 #checking to make sure the value is at the tail 
+        
+        value = self.head.value 
+        self.head.next = self.head
+        self.length -= 1 
         self.delete(self.head)
         return value
+
+        """
+        self.length -= 1                                       # decrease the list length
+        self.head.next = self.head                             # taking the old head and changing the pointer
+        value = self.head.value                                #                              
+        self.delete(self.head)
+        return value
+        """
 
 
     """Wraps the given value in a ListNode and inserts it 
@@ -91,6 +102,7 @@ class DoublyLinkedList:
     current tail's previous node the new tail of the List.
     Returns the value of the removed Node."""
     def remove_from_tail(self):
+        self.length -= 1
         value = self.tail.value
         self.delete(self.tail)
         return value 
@@ -137,8 +149,14 @@ class DoublyLinkedList:
         
     """Returns the highest value currently in the list"""
     def get_max(self):
-        max_value = 0                                              # Max max var
-        node.next +                                                # Loop through nodes via node.next
-        if node.value > max_value:                                 # If node.value is higher, update max
-        # return max
-        pass
+        max_value = 0                                              # create a starting point for max value 
+        current_node = self.head                                   # starting point to loop through the list 
+
+        while current_node != None: 
+            if current_node.value > max_value:
+                max_value = current_node.value
+                current_node = current_node.next 
+            
+        # create a variable to keep track of the node 
+        # how do you know if you gone through the list 
+        # 
